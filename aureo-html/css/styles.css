@@ -215,7 +215,7 @@ button {
   display: inline-flex;
   align-items: stretch;
   min-height: 54px;
-  border-radius: 3px;
+  border-radius: 999px;
   border: 1px solid var(--btn-line);
   background: var(--btn-bg);
   color: var(--btn-fg);
@@ -233,7 +233,7 @@ button {
 .btn > span:not(.btn__arrow) {
   display: flex;
   align-items: center;
-  padding: 0 1.5rem 0 1.6rem;
+  padding: 0 0.9rem 0 1.75rem;
 }
 .btn > .icon {
   align-self: center;
@@ -248,10 +248,15 @@ button {
   flex: none;
   display: grid;
   place-items: center;
-  width: 56px;
-  border-left: 1px solid var(--btn-line);
+  align-self: center;
+  width: 42px;
+  height: 42px;
+  margin: 0 5px 0 0;
+  border-radius: 50%;
+  background: var(--btn-disc, rgba(255, 255, 255, 0.92));
+  color: var(--btn-disc-fg, var(--navy));
   overflow: hidden;
-  transition: border-color 0.5s var(--ease);
+  transition: background 0.5s var(--ease);
 }
 .btn__arrow .icon {
   grid-area: 1 / 1;
@@ -329,15 +334,22 @@ button {
 .btn--glass-dark::after,
 .btn--sand::after { background: radial-gradient(180px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.5), transparent 62%); }
 
-.btn--sm { min-height: 44px; font-size: 0.72rem; }
-.btn--sm > span:not(.btn__arrow) { padding: 0 1.1rem 0 1.2rem; }
-.btn--sm .btn__arrow { width: 46px; }
-.btn--sm .btn__arrow .icon { width: 1.4rem; }
-.btn--lg { min-height: 60px; font-size: 0.8rem; }
-.btn--lg .btn__arrow { width: 64px; }
-.btn--nav { min-height: 44px; font-size: 0.72rem; }
-.btn--nav > span:not(.btn__arrow) { padding: 0 1.1rem 0 1.25rem; }
-.btn--nav .btn__arrow { width: 46px; }
+.btn--sm { min-height: 46px; font-size: 0.72rem; }
+.btn--sm > span:not(.btn__arrow) { padding: 0 0.7rem 0 1.35rem; }
+.btn--sm .btn__arrow { width: 34px; height: 34px; }
+.btn--sm .btn__arrow .icon { width: 1.3rem; }
+.btn--lg { min-height: 62px; font-size: 0.8rem; }
+.btn--lg > span:not(.btn__arrow) { padding: 0 1.1rem 0 2rem; }
+.btn--lg .btn__arrow { width: 48px; height: 48px; }
+.btn--nav { min-height: 46px; font-size: 0.72rem; }
+.btn--nav > span:not(.btn__arrow) { padding: 0 0.8rem 0 1.4rem; }
+.btn--nav .btn__arrow { width: 34px; height: 34px; }
+.btn--nav .btn__arrow .icon { width: 1.3rem; }
+/* Arrow disc colours per variant */
+.btn--sand, .btn--glass-sand { --btn-disc: var(--navy); --btn-disc-fg: var(--sand); }
+.btn--navy { --btn-disc: var(--sand); --btn-disc-fg: var(--navy); }
+.btn--glass { --btn-disc: rgba(255, 255, 255, 0.92); --btn-disc-fg: var(--navy); }
+.btn--glass-dark { --btn-disc: var(--navy); --btn-disc-fg: var(--porcelain); }
 .btn--block { width: 100%; }
 .btn--block > span:not(.btn__arrow) { flex: 1; }
 
